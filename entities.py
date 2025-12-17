@@ -35,7 +35,8 @@ class PlayerContext:
                  record: pd.Series,
                  schedule: pd.DataFrame,
                  schedule_team: pd.DataFrame,
-                 schedule_opp: pd.DataFrame
+                 schedule_opp: pd.DataFrame,
+                 pace: float
         ):
 
         _df = description_df.df
@@ -48,6 +49,7 @@ class PlayerContext:
         self.schedule = schedule
         self.schedule_team = schedule_team       
         self.schedule_opp = schedule_opp
+        self.pace = pace
 
         self.df = self.description[['#', 'Height', 'Weight']].join(
             self.performance, how='inner')
