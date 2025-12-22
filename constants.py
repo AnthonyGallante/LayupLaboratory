@@ -1,4 +1,4 @@
-PICKLE_FILE = 'data\\teams_data.pkl'
+TEAMS_DATA = 'data\\teams_data.pkl'
 STAT_EFFECTS = 'data\\stat_effects.pkl'
 
 POSSESSIONS_MEAN = 72.04849315068492
