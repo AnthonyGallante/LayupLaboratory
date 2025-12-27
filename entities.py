@@ -24,6 +24,7 @@ class BasketballData():
 
     def __init__(self, df):
         self.df = df.set_index('Player')
+        self.df.fillna(0)
 
 
 class PlayerContext:
@@ -53,6 +54,7 @@ class PlayerContext:
 
         self.df = self.description[['#', 'Height', 'Weight']].join(
             self.performance, how='inner')
+        self.df.fillna(0)
 
     def __repr__(self):
         return f"<School: {self.school} contains {self.num_players()} players>"
@@ -99,12 +101,16 @@ class Team:
         self.pct = float(context.record['W-L%'])
         self.srs = float(context.record['SRS'])
         self.sos = float(context.record['SOS'])
+        self.pace = float(context.pace)
 
         self.schedule = context.schedule
         self.schedule_team = context.schedule_team       
         self.schedule_opp = context.schedule_opp
         self.causal_df = self.create_causal_df()       
         self.seed = None
+
+        self.df.fillna(0)
+        self.causal_df.fillna(0)
 
     def __repr__(self):
         return f"<Team: {self.name} Record: {self.wins}-{self.losses}>"
