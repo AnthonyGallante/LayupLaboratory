@@ -1,86 +1,90 @@
 
 import pickle
+import openpyxl as xl
+
 from entities import *
 from constants import TEAMS_DATA
 
 with open(TEAMS_DATA, 'rb') as f:
     teams = pickle.load(f)
 
-# TODO: UPDATE ALL OF THESE USING THE SPREADSHEET!
+wb = xl.load_workbook('resources/blank_bracket.xlsx', data_only=True)
+sheet = wb['Teams']
+
 east = {
-    1:  "Connecticut",
-    2:  "Iowa State",
-    3:  "Illinois",
-    4:  "Auburn",
-    5:  "San Diego",
-    6:  "Brigham Young",
-    7:  "Washington State",
-    8:  "Florida Atlantic",
-    9:  "Northwestern",
-    10: "Drake",
-    11: "Duquesne",
-    12: "UAB",
-    13: "Yale",
-    14: "Morehead State",
-    15: "South Dakota State",
-    16: "Stetson"
+    1 : sheet['C2'].value,
+    16: sheet['C3'].value,
+    8 : sheet['C4'].value,
+    9 : sheet['C5'].value,
+    5 : sheet['C6'].value,
+    12: sheet['C7'].value,
+    4 : sheet['C8'].value,
+    13: sheet['C9'].value,
+    6 : sheet['C10'].value,
+    11: sheet['C11'].value,
+    3 : sheet['C12'].value,
+    14: sheet['C13'].value,
+    7 : sheet['C14'].value,
+    10: sheet['C15'].value,
+    2 : sheet['C16'].value,
+    15: sheet['C17'].value,
 }
 
 midwest = {
-    1:  "Purdue",
-    2:  "Tennessee",
-    3:  "Creighton",
-    4:  "Kansas",
-    5:  "Gonzaga",
-    6:  "South Carolina",
-    7:  "Texas",
-    8:  "Utah State",
-    9:  "TCU",
-    10: "Penn State",
-    11: "Oregon",
-    12: "McNeese State",
-    13: "Kent State",
-    14: "Akron",
-    15: "Saint Peter's",
-    16: "Northern Kentucky"
+    1 : sheet['C18'].value,
+    16: sheet['C19'].value,
+    8 : sheet['C20'].value,
+    9 : sheet['C21'].value,
+    5 : sheet['C22'].value,
+    12: sheet['C23'].value,
+    4 : sheet['C24'].value,
+    13: sheet['C25'].value,
+    6 : sheet['C26'].value,
+    11: sheet['C27'].value,
+    3 : sheet['C28'].value,
+    14: sheet['C29'].value,
+    7 : sheet['C30'].value,
+    10: sheet['C31'].value,
+    2 : sheet['C32'].value,
+    15: sheet['C33'].value,
 }
 
 south = {
-    1:  "Houston",
-    2:  "Marquette",
-    3:  "Kentucky",
-    4:  "Duke",
-    5:  "Wisconsin",
-    6:  "Texas Tech",
-    7:  "Florida",
-    8:  "Nebraska",
-    9:  "Texas A&M",
-    10: "Utah State",
-    11: "NC State",
-    12: "James Madison",
-    13: "Vermont",
-    14: "Oakland",
-    15: "Western Kentucky",
-    16: "Longwood"
+    1 : sheet['C34'].value,
+    16: sheet['C35'].value,
+    8 : sheet['C36'].value,
+    9 : sheet['C37'].value,
+    5 : sheet['C38'].value,
+    12: sheet['C39'].value,
+    4 : sheet['C40'].value,
+    13: sheet['C41'].value,
+    6 : sheet['C42'].value,
+    11: sheet['C43'].value,
+    3 : sheet['C44'].value,
+    14: sheet['C45'].value,
+    7 : sheet['C46'].value,
+    10: sheet['C47'].value,
+    2 : sheet['C48'].value,
+    15: sheet['C49'].value,
 }
 
 west = {
-    1:  "North Carolina",
-    2:  "Arizona",
-    3:  "Baylor",
-    4:  "Alabama",
-    5:  "Saint Mary's (CA)",
-    6:  "Clemson",
-    7:  "Dayton",
-    8:  "Mississippi State",
-    9:  "Michigan State",
-    10: "Nevada",
-    11: "New Mexico",
-    12: "Grand Canyon",
-    13: "College of Charleston",
-    14: "Colgate",
-    15: "Long Beach State",
-    16: "Howard"
+    1 : sheet['C50'].value,
+    16: sheet['C51'].value,
+    8 : sheet['C52'].value,
+    9 : sheet['C53'].value,
+    5 : sheet['C54'].value,
+    12: sheet['C55'].value,
+    4 : sheet['C56'].value,
+    13: sheet['C57'].value,
+    6 : sheet['C58'].value,
+    11: sheet['C59'].value,
+    3 : sheet['C60'].value,
+    14: sheet['C61'].value,
+    7 : sheet['C62'].value,
+    10: sheet['C63'].value,
+    2 : sheet['C64'].value,
+    15: sheet['C65'].value,
 }
 
 first_round_order = [
