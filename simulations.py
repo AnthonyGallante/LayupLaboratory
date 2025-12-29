@@ -202,6 +202,10 @@ def simulate_n_games(team_1, team_2, n: int, summary=False, viz=False):
              'Loser': overall_loser, 
              'Contributions': df, 
              'Scores': game_results, 
+             'Team 1': team_1,
+             'Team 2': team_2,
+             'Win Count 1': team_1_win_counter,
+             'Win Count 2': team_2_win_counter, 
              'Record': record,
              'Analysis': analysis
             }
