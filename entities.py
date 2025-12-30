@@ -101,7 +101,7 @@ class Team:
         self.pct = float(context.record['W-L%'])
         self.srs = float(context.record['SRS'])
         self.sos = float(context.record['SOS'])
-        self.pace = float(context.pace)
+        self.pace = context.pace
 
         self.schedule = context.schedule
         self.schedule_team = context.schedule_team       
@@ -139,4 +139,5 @@ class Team:
 
 def height_to_inches(height: str) -> int:
     h = height.split('-')
-    return int(h[0]) * 12 + int(h[-1])
+    h = int(float(h[0]) * 12 + float(h[-1]))
+    return h
