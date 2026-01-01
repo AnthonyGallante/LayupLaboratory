@@ -136,7 +136,7 @@ def parse_game_log(log):
     return event_log
 
 
-def simulate_n_games(team_1, team_2, n: int, summary=False, viz=False):
+def simulate_n_games(team_1, team_2, n: int, summary=True):
     clear_output()
     tqdm.write(f'Simulating Game: {team_1.name} vs. {team_2.name}')
 
@@ -193,13 +193,15 @@ def simulate_n_games(team_1, team_2, n: int, summary=False, viz=False):
     overall_loser = team_1.name if team_1_win_counter < team_2_win_counter else team_2.name
     record = f'{team_1.name}: {team_1_win_counter} - {team_2_win_counter} :{team_2.name}'
 
-    tqdm.write('Preparing simulation analysis.')
-
-    prompt = create_prompt(overall_winner, record, df)
-    analysis = GPT_Game_Analysis(prompt)
+    if summary:
+        tqdm.write('Preparing simulation analysis...')
+        prompt = create_prompt(overall_winner, record, df)
+        analysis = GPT_Game_Analysis(prompt)
+        tqdm.write(analysis)
+    else: 
+        analysis = ''
 
     tqdm.write(f'{team_1.name} vs. {team_2.name} Complete!')
-    tqdm.write(analysis)
 
     return {'Winner': overall_winner,
              'Loser': overall_loser, 
