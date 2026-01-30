@@ -18,9 +18,7 @@
   date: "February 2, 2026",
 )
 
-// Example Citation:
-// This is a statement requiring a citation #footnote[Author, _Title_ (Publisher, Year), 55.]. 
-
+// To cite a paper: @gilani_2021_hoopR
 
 = Introduction // The introduction explains motivation and context for the research. 
 // Describe why you are conducting this research 
